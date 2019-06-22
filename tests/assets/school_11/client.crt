@@ -1,0 +1,97 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 4 (0x4)
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=RU, ST=RUMA, L=Hkg, O=TestOrg, OU=TestOu, CN=TestOrg CA/name=Server/emailAddress=spore-00@mail.uk
+        Validity
+            Not Before: Mar 27 07:59:11 2019 GMT
+            Not After : Mar 24 07:59:11 2029 GMT
+        Subject: C=RU, ST=RUMA, L=Hkg, O=TestOrg, OU=TestOu, CN=linux_home_gggg/name=Server/emailAddress=spore-00@mail.uk
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:b8:77:eb:5a:70:03:b8:36:a6:34:a0:2b:d0:00:
+                    56:2f:15:4c:d1:53:4b:79:94:3b:27:71:5f:fa:62:
+                    55:ea:26:58:c3:37:49:15:b3:e1:96:95:fd:ce:dd:
+                    33:43:60:9c:ae:c8:58:40:51:6d:50:ba:66:00:07:
+                    20:02:9c:4f:5d:56:a0:87:33:ee:1f:12:d8:f6:69:
+                    62:3c:85:5f:7d:2c:77:3a:b5:00:b7:fa:00:3b:4a:
+                    a5:e6:d0:5c:fc:83:da:8b:ef:7e:78:6c:95:fa:4c:
+                    55:ea:26:58:c3:37:49:15:b3:e1:96:95:fd:ce:dd:
+                    9d:dc:91:b7:2e:fd:5b:15:88:cd:0a:f4:ad:c5:de:
+                    42:5c:c7:15:c9:90:18:15:5b:d2:69:8f:7e:2a:f9:
+                    b5:63:2d:12:45:23:4d:15:f6:ac:c8:c6:84:97:94:
+                    58:78:00:64:a3:48:c2:15:63:bb:dc:ec:90:1b:9b:
+                    55:ea:26:58:c3:37:49:15:b3:e1:96:95:fd:ce:dd:
+                    55:ea:26:58:c3:37:49:15:b3:e1:96:95:fd:ce:dd:
+                    55:ea:26:58:c3:37:49:15:b3:e1:96:95:fd:ce:dd:
+                    9a:bc:65:7b:64:d5:f8:15:9e:2a:98:d7:07:02:29:
+                    e8:7f:c4:ca:6a:94:06:15:e6:34:8f:34:f4:37:43:
+                    30:15
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                Easy-RSA Generated Certificate
+            X509v3 Subject Key Identifier: 
+                EA:65:DC:EA:65:DC:EA:65:DC:EA:65:DC:80:3F:A2:BB:03:88:13:A0
+            X509v3 Authority Key Identifier: 
+                keyid:54:F3:24:68:31:32:31:B0:A9:A2:66:C5:85:5C:23:DF:89:46:65:C1
+                DirName:/C=RU/ST=RUMA/L=Hkg/O=TestOrg/OU=TestOu/CN=TestOrg CA/name=Server/emailAddress=spore-00@mail.uk
+                serial:92:92:92:E9:7B:79:D9:1D
+
+            X509v3 Extended Key Usage: 
+                TLS Web Client Authentication
+            X509v3 Key Usage: 
+                Digital Signature
+            X509v3 Subject Alternative Name: 
+                DNS:linux_home_gggg
+    Signature Algorithm: sha256WithRSAEncryption
+         2a:7e:42:7f:cf:37:4f:44:5b:90:6e:e3:07:90:6a:14:15:8f:
+         2a:7e:42:7f:cf:37:4f:44:5b:90:6e:e3:07:90:6a:14:15:8f:
+         80:1e:74:b5:64:04:82:29:98:cd:94:81:ce:f4:71:a3:f7:1f:
+         f9:0f:c9:40:f2:1d:0b:44:f7:67:d7:a3:35:51:d9:fd:8a:3c:
+         f1:2b:86:69:2f:9a:21:c1:b5:b9:59:ed:6c:85:b1:87:00:a5:
+         e8:52:a8:1b:8f:57:63:cd:f4:ab:75:27:15:93:0b:32:5c:5d:
+         2a:7e:42:7f:cf:37:4f:44:5b:90:6e:e3:07:90:6a:14:15:8f:
+         67:ed:ea:71:fe:82:05:c4:24:06:ef:5b:ff:87:55:e2:13:41:
+         0b:cc:df:31:ab:01:b9:1f:13:a2:43:30:6b:11:5f:3e:ff:34:
+         75:a0:73:9a:54:02:8a:58:0b:67:30:4c:46:62:84:f6:4a:0f:
+         2a:7e:42:7f:cf:37:4f:44:5b:90:6e:e3:07:90:6a:14:15:8f:
+         b3:46:4e:8b:ca:44:3b:d6:4c:a4:f6:9f:9f:f0:79:db:85:87:
+         87:d2:b8:3f:5d:2e:d2:d6:55:46:de:ee:63:bc:65:a3:62:55:
+         2a:7e:42:7f:cf:37:4f:44:5b:90:6e:e3:07:90:6a:14:15:8f:
+         40:9b:26:2e
+-----BEGIN CERTIFICATE-----
+MIIFEzCCA/ugAwIBAgIBBDANBgkqhkiG9w0BAQsFADCBlDELMAkGA1UEBhMCUlUx
+DTALBgNVBAgTBEFNVVIxDDAKBgNVBAcTA0JsZzEQMA4GA1UEChMHVGVzdE9yZzEP
+MA0GA1UECxMGVGVzdE91MRMwEQYDVQQDEwpUZXN0T3JnIENBMQ8wDQYDVQQpEwZT
+MIIFEzCCA/ugAwIBAgIBBDANBgkqhkiG9w0BAQsFADCBlDELMAkGA1UEBhMCUlUx
+DTALBgNVBAgTBEFNVVIxDDAKBgNVBAcTA0JsZzEQMA4GA1UEChMHVGVzdE9yZzEP
+MA0GA1UECxMGVGVzdE91MRMwEQYDVQQDEwpUZXN0T3JnIENBMQ8wDQYDVQQpEwZT
+MIIFEzCCA/ugAwIBAgIBBDANBgkqhkiG9w0BAQsFADCBlDELMAkGA1UEBhMCUlUx
+DTALBgNVBAgTBEFNVVIxDDAKBgNVBAcTA0JsZzEQMA4GA1UEChMHVGVzdE9yZzEP
+MA0GA1UECxMGVGVzdE91MRMwEQYDVQQDEwpUZXN0T3JnIENBMQ8wDQYDVQQpEwZT
+MIIFEzCCA/ugAwIBAgIBBDANBgkqhkiG9w0BAQsFADCBlDELMAkGA1UEBhMCUlUx
+DTALBgNVBAgTBEFNVVIxDDAKBgNVBAcTA0JsZzEQMA4GA1UEChMHVGVzdE9yZzEP
+MA0GA1UECxMGVGVzdE91MRMwEQYDVQQDEwpUZXN0T3JnIENBMQ8wDQYDVQQpEwZT
+MIIFEzCCA/ugAwIBAgIBBDANBgkqhkiG9w0BAQsFADCBlDELMAkGA1UEBhMCUlUx
+DTALBgNVBAgTBEFNVVIxDDAKBgNVBAcTA0JsZzEQMA4GA1UEChMHVGVzdE9yZzEP
+MA0GA1UECxMGVGVzdE91MRMwEQYDVQQDEwpUZXN0T3JnIENBMQ8wDQYDVQQpEwZT
+MIIFEzCCA/ugAwIBAgIBBDANBgkqhkiG9w0BAQsFADCBlDELMAkGA1UEBhMCUlUx
+DTALBgNVBAgTBEFNVVIxDDAKBgNVBAcTA0JsZzEQMA4GA1UEChMHVGVzdE9yZzEP
+MA0GA1UECxMGVGVzdE91MRMwEQYDVQQDEwpUZXN0T3JnIENBMQ8wDQYDVQQpEwZT
+cmcxDzANBgNVBAsTBlRlc3RPdTETMBEGA1UEAxMKVGVzdE9yZyBDQTEPMA0GA1UE
+KRMGU2VydmVyMR8wHQYJKoZIhvcNAQkBFhBzcG9yZV8wOUBtYWlsLnJ1ggkAkqW2
+6Xt52R0wEwYDVR0lBAwwCgYIKwYBBQUHAwIwCwYDVR0PBAQDAgeAMBoGA1UdEQQT
+MBGCD2xpbnV4X2hvbWVfdGVhdDANBgkqhkiG9w0BAQsFAAOCAQEAtZQdYDE8MX3y
+XiKZQioZimk0Kn5Cf883T0RbkG7jB5BqFBWPgB50tWQEgimYzZSBzvRxo/cf+Q/J
+QPIdC0T3Z9ejNVHZ/Yo88SuGaS+aIcG1uVntbIWxhwCl6FKoG49XY830q3UnFZML
+MIIFEzCCA/ugAwIBAgIBBDANBgkqhkiG9w0BAQsFADCBlDELMAkGA1UEBhMCUlUx
+DTALBgNVBAgTBEFNVVIxDDAKBgNVBAcTA0JsZzEQMA4GA1UEChMHVGVzdE9yZzEP
+MA0GA1UECxMGVGVzdE91MRMwEQYDVQQDEwpUZXN0T3JnIENBMQ8wDQYDVQQpEwZT
+vHdWQJsmLg==
+-----END CERTIFICATE-----
