@@ -1,6 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
-import ListDir from '../components/ListDir';
 
 export default class IndexPage extends React.Component {
   constructor(props) {
@@ -10,7 +8,7 @@ export default class IndexPage extends React.Component {
 
   static async getInitialProps({ req }) {
     return { 
-      keys: await req.$keys.getInfoList(),
+      keys: await req.$keys.getKeyList(),
       search: '',
     };
   }
@@ -22,7 +20,7 @@ export default class IndexPage extends React.Component {
   render() {
     const keys = this.props.keys
       .filter((key) => !this.state.search.length || key.name.includes(this.state.search))
-      .map((key) => (<li key={key.name}>{key.isLegacy ? key.name : key.meta.name} <a href={'download/' + key.name}>Download</a></li>));
+      .map((key) => (<li key={key.name}>{key.readableName} {key.isLegacy} <a href={'download/' + key.name}>Download</a></li>));
 
     return <div>
       <input type='text' onChange={this.handleSearchInput.bind(this)}/>
