@@ -67,9 +67,10 @@ class KeysStorage {
         }
 
         const name = parts[index];
+        const fullpath = path.join(this.resolveFullpath(key), name);
         return {
             name,
-            data: await fs.readFile(path.join(this.resolveFullpath(key), name)),
+            data: await fs.readFile(fullpath),
         }
     }
 }

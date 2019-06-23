@@ -14,17 +14,19 @@ const KeysStorage = require('./keys');
 app.prepare().then(() => {
   const server = new Koa()
   const router = new Router()
-  const keys = new KeysStorage('/home/rglr/test_data/')
+  const keys = new KeysStorage(__dirname + '/tests/assets')
 
   router.get('/download/:name/:partStr', async (ctx) => {
     const { name, partStr } = ctx.params;
-    const part = Number(partStr);
+    const index = Number(partStr);
     if (!name || !name.match(/^[a-z0-9_-\s]+$/i)) {
       ctx.throw(400);
     }
 
-    const key = await keys.getInfoByName(name);
-    ctx.body = JSON.stringify(key);
+    const part = await keys.loadPart(name, index);
+
+    ctx.response.set('Content-Disposition', `filename="${part.name}"`);
+    ctx.body = part.data;
   });
 
   router.get('*', async ctx => {
