@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link';
 import keysLoader from '../utils/keysLoader';
+import { getReq } from '../utils/xhr';
 
 
 export default function IndexPage(props) {
@@ -15,11 +16,7 @@ export default function IndexPage(props) {
   const [search, setSearch] = useState('');
   const [serve, setServe] = useState(props.serve);
 
-  const sendServe = () => {
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `/api/serve?name=${serve}`, true);
-    xhr.send();
-  }
+  const sendServe = () => getReq(`/api/serve?name=${serve}`);
 
   useEffect(() => {
     const keys = props.keys
