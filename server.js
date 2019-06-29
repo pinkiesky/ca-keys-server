@@ -15,6 +15,17 @@ app.prepare().then(() => {
   const server = new Koa()
   const router = new Router()
   const keys = new KeysStorage(__dirname + '/tests/assets')
+  let currentServing = null;
+
+  router.get('/s/:partStr', async (ctx) => {
+    const { partStr } = ctx.params;
+    const index = Number(partStr);
+
+    const part = await keys.loadPart(currentServing, index);
+
+    ctx.response.set('Content-Disposition', `filename="${part.name}"`);
+    ctx.body = part.data;
+  });
 
   router.get('/download/:name/:partStr', async (ctx) => {
     const { name, partStr } = ctx.params;
@@ -27,6 +38,41 @@ app.prepare().then(() => {
 
     ctx.response.set('Content-Disposition', `filename="${part.name}"`);
     ctx.body = part.data;
+  });
+
+  router.get('/api/getKeyByName', async (ctx) => {
+    const name = ctx.query.name;
+    if (!name || !name.length) {
+      ctx.throw(400);
+    }
+
+    const key = await keys.getKeyByName(name);
+    ctx.body = JSON.stringify(key);
+  });
+
+  router.get('/api/getParts', async (ctx) => {
+    const name = ctx.query.name;
+    if (!name || !name.length) {
+      ctx.throw(400);
+    }
+
+    const key = await keys.getParts(name);
+    ctx.body = JSON.stringify(key);
+  });
+
+  router.get('/api/getKeyList', async (ctx) => {
+    const key = await keys.getKeyList();
+    ctx.body = JSON.stringify(key);
+  });
+
+  router.get('/api/serve', async (ctx) => {
+    const name = ctx.query.name;
+    if (!name || !name.length) {
+      ctx.throw(400);
+    }
+
+    currentServing = name;
+    console.log('set serving', currentServing);
   });
 
   router.get('*', async ctx => {
