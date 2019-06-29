@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link';
 import keysLoader from '../utils/keysLoader';
 import { getReq } from '../utils/xhr';
+import Layout from '../components/Layout';
 
 
 export default function IndexPage(props) {
@@ -29,11 +30,11 @@ export default function IndexPage(props) {
     setKeys(keys);
   }, [search]);
 
-  return <div>
+  return <Layout>
     <div>Serve now: {serve}</div>
     <input type='text' onChange={event => setSearch(event.target.value)}/>
     <ul>{keys}</ul>
-  </div>;
+  </Layout>;
 }
 
 IndexPage.getInitialProps = async ({ req }) => {

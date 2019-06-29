@@ -1,4 +1,5 @@
 import keysLoader from '../utils/keysLoader';
+import Layout from '../components/Layout';
 
 
 export default function DownloadList(props) {
@@ -6,10 +7,10 @@ export default function DownloadList(props) {
     const parts = props.parts
         .map((part, index) => (<li key={part}>{part}<a href={link(index)}>Download</a></li>));
 
-    return <div>
+    return <Layout>
         <h2>{props.keyObject.readableName}</h2>
         <ul>{parts}</ul>
-    </div>;
+    </Layout>;
 }
 
 DownloadList.getInitialProps = async ({ query, req, res }) => {
