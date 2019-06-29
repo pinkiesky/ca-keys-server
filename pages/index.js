@@ -1,30 +1,47 @@
-import React from 'react'
+import { useEffect, useState, useRef } from 'react'
+import Link from 'next/link';
+import keysLoader from '../utils/keysLoader';
 
-export default class IndexPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { search: '' };
+
+export default function IndexPage(props) {
+  function checkKey(key, search) {
+    search = search.toLowerCase();
+    return !search.length || 
+      key.name.toLowerCase().includes(search) || 
+      key.readableName.toLowerCase().includes(search);
   }
 
-  static async getInitialProps({ req }) {
+  const [keys, setKeys] = useState([]);
+  const [search, setSearch] = useState('');
+  const [serve, setServe] = useState(props.serve);
+
+  const sendServe = () => {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `/api/serve?name=${serve}`, true);
+    xhr.send();
+  }
+
+  useEffect(() => {
+    const keys = props.keys
+      .filter((key) => checkKey(key, search))
+      .map((key) => (<li key={key.name}>
+          {key.readableName}
+          <Link href={'/download?name=' + key.name}>Download</Link>
+          <button onClick={() => (setServe(key.name),sendServe())}>Serve</button>
+        </li>));
+    setKeys(keys);
+  }, [search]);
+
+  return <div>
+    <div>Serve now: {serve}</div>
+    <input type='text' onChange={event => setSearch(event.target.value)}/>
+    <ul>{keys}</ul>
+  </div>;
+}
+
+IndexPage.getInitialProps = async ({ req }) => {
     return { 
-      keys: await req.$keys.getKeyList(),
+      keys: await keysLoader(req, 'getKeyList'),
       search: '',
     };
-  }
-
-  handleSearchInput(event) {
-    this.setState({ search: event.target.value });
-  }
-
-  render() {
-    const keys = this.props.keys
-      .filter((key) => !this.state.search.length || key.name.includes(this.state.search))
-      .map((key) => (<li key={key.name}>{key.readableName} {key.isLegacy} <a href={'download/' + key.name}>Download</a></li>));
-
-    return <div>
-      <input type='text' onChange={this.handleSearchInput.bind(this)}/>
-      <ul>{keys}</ul>
-    </div>;
-  }
-}
+};
