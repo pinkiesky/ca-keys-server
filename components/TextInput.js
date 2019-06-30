@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import css from 'styled-jsx/css';
+import { colors } from '../theme';
 
 
 const style = css`
@@ -12,7 +13,7 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid ${colors.primary};
 }`;
 
 

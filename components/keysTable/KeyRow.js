@@ -6,7 +6,7 @@ const rowStyle = css`
   }
 
   tr:hover {
-    background-color: #eee;
+    background-color: #f9f9f9;
   }
 `;
 

@@ -7,9 +7,19 @@ export default function FilterableKeysTable({ keys, actions }) {
   const [filter, setFilter] = useState('');
 
   return (
-    <div>
+    <div className="filterableKeys">
       <TextInput name="name" placeholder="Search by name" onChange={ev => setFilter(ev.target.value)} />
       <KeysTable keys={keys} filter={filter} actions={actions} />
+      <style jsx>
+        {`
+          .filterableKeys {
+            padding: 12px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            background: white;
+          }
+      `}
+      </style>
     </div>
   );
 }

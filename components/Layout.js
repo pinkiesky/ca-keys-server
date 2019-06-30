@@ -1,7 +1,11 @@
+import { colors } from '../theme';
+
 const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  background: colors.background,
+  padding: '12px',
 };
 
 const Layout = ({ children }) => (
@@ -11,7 +15,7 @@ const Layout = ({ children }) => (
       {`html, body {
         font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu', 'Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
         color: #333;
-        background-color: #fefefe;
+        background-color: ${colors.background};
         margin: 0;
         padding: 0;
       }`}

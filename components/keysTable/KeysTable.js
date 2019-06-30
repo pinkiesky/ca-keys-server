@@ -2,10 +2,6 @@ import css from 'styled-jsx/css';
 import KeyRow from './KeyRow';
 
 const tableStyle = css`
-table {
-  padding: 1rem;
-}
-
 th {
   text-align: left;
   text-transform: uppercase;
@@ -29,11 +25,6 @@ export default function KeysTable({ keys, filter, actions }) {
   return (
     <table>
       <style jsx>{tableStyle}</style>
-      <thead>
-        <tr>
-          <th>name</th>
-        </tr>
-      </thead>
       <tbody>
         {fkeys}
       </tbody>

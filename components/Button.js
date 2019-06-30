@@ -1,3 +1,6 @@
+import { colors } from '../theme';
+
+
 export default function Button({ onClick, children }) {
   return (
     <button onClick={onClick} type="button">
@@ -7,9 +10,9 @@ export default function Button({ onClick, children }) {
           text-transform: uppercase;
           
           transition: box-shadow 0.1s ease-out 0s;
-          color: blue;
-          background: white;
-          border: 1px solid #aaa;
+          color: ${colors.primary};
+          background: rgba(0, 0, 0, 0);
+          border: 1px solid ${colors.primary};
           border-radius: 3px;
           margin: .3rem;
           padding: .5rem 1rem;
