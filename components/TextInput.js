@@ -13,12 +13,14 @@ input[type=text] {
 
 input[type=text]:focus {
     border-bottom: 2px solid blue;
-}`
+}`;
 
 
 export default function TextInput(props) {
-    return <Fragment>
-        <input {...props} type='text'/>
-        <style jsx>{style}</style>
-    </Fragment>;
+  return (
+    <Fragment>
+      <input {...props} type="text" />
+      <style jsx>{style}</style>
+    </Fragment>
+  );
 }
