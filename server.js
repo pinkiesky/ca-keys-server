@@ -77,6 +77,7 @@ app.prepare().then(() => {
 
   router.get('*', async ctx => {
     ctx.req.$keys = keys;
+    ctx.req.$currentServing = currentServing;
     await handle(ctx.req, ctx.res)
     ctx.respond = false
   })
