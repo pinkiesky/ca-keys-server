@@ -25,7 +25,7 @@ export default function IndexPage({ serve, keys }) {
         keys={keys}
         actions={key => (
           <div>
-            <Link href={`/download?name=${key.name}`}><Button>Download</Button></Link>
+            <Link href={`/download?name=${key.name}`}><Button buttonStyle="text">files</Button></Link>
             <Button onClick={() => (setServe(key.name))}>Serve</Button>
           </div>
         )}

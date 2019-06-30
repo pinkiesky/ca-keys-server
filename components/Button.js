@@ -1,9 +1,9 @@
 import { colors } from '../theme';
 
 
-export default function Button({ onClick, children }) {
+export default function Button({ onClick, children, buttonStyle = 'outline' }) {
   return (
-    <button onClick={onClick} type="button">
+    <button className={buttonStyle} onClick={onClick} type="button">
       {children}
       <style jsx>
         {`button {
@@ -23,7 +23,18 @@ export default function Button({ onClick, children }) {
         }
         
         button:active {
+          background: ${colors.primaryLigher};
           box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+        }
+
+        .text {
+          border: none;
+          box-shadow: none;
+        }
+
+        .text:hover, .text:active {
+          box-shadow: none;
+          background: ${colors.primaryLigher};
         }
       `}
       </style>
