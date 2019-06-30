@@ -10,7 +10,7 @@ const layoutStyle = {
 
 const Layout = ({ children }) => (
   <div style={layoutStyle}>
-    {children}
+    <div style={{ width: '100%', maxWidth: '600px' }}>{children}</div>
     <style jsx global>
       {`html, body {
         font-family: -apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu', 'Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
