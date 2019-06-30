@@ -14,7 +14,7 @@ const KeysStorage = require('./keys');
 app.prepare().then(() => {
   const server = new Koa()
   const router = new Router()
-  const keys = new KeysStorage(__dirname + '/tests/assets')
+  const keys = new KeysStorage(process.env.KS_STORAGE_DIR)
   let currentServing = null;
 
   router.get('/s/:partStr', async (ctx) => {
@@ -72,7 +72,6 @@ app.prepare().then(() => {
     }
 
     currentServing = name;
-    console.log('set serving', currentServing);
   });
 
   router.get('*', async ctx => {
