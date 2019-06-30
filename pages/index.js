@@ -4,6 +4,7 @@ import keysLoader from '../utils/keysLoader';
 import { getReq } from '../utils/xhr';
 import Layout from '../components/Layout';
 import FilterableKeysTable from '../components/keysTable/FilterableKeysTable';
+import Button from '../components/Button';
 
 
 export default function IndexPage(props) {
@@ -18,8 +19,8 @@ export default function IndexPage(props) {
     <FilterableKeysTable 
       keys={props.keys}
       actions={(key) => (<div>
-        <Link href={'/download?name=' + key.name}><button>Download</button></Link>
-        <button onClick={() => (setServe(key.name))}>Serve</button>
+        <Link href={'/download?name=' + key.name}><Button>Download</Button></Link>
+        <Button onClick={() => (setServe(key.name))}>Serve</Button>
       </div>)}/>
   </Layout>;
 }
