@@ -1,14 +1,6 @@
-import css from 'styled-jsx/css';
 import KeyRow from './KeyRow';
+import List from '../list';
 
-const tableStyle = css`
-th {
-  text-align: left;
-  text-transform: uppercase;
-  padding: .3rem;
-  color: #aaa;
-}
-`;
 
 export default function KeysTable({ keys, filter, actions }) {
   function checkKey(key, search) {
@@ -22,12 +14,5 @@ export default function KeysTable({ keys, filter, actions }) {
     .filter(key => checkKey(key, filter))
     .map(key => <KeyRow key={key.name} keyObj={key} actions={actions} />);
 
-  return (
-    <table>
-      <style jsx>{tableStyle}</style>
-      <tbody>
-        {fkeys}
-      </tbody>
-    </table>
-  );
+  return (<List>{fkeys}</List>);
 }
