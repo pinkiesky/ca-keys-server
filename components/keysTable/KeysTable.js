@@ -1,5 +1,18 @@
 import KeyRow from './KeyRow';
+import css from 'styled-jsx/css';
 
+const tableStyle = css`
+    table {
+        padding: 1rem;
+    }
+
+    th {
+        text-align: left;
+        text-transform: uppercase;
+        padding: .3rem;
+        color: #aaa;
+    }
+`;
 
 export default function KeysTable({ keys, filter, actions }) {
     function checkKey(key, search) {
@@ -14,10 +27,10 @@ export default function KeysTable({ keys, filter, actions }) {
         .map(key => <KeyRow key={key.name} keyObj={key} actions={actions} />);
 
     return <table>
+        <style jsx>{tableStyle}</style>
         <thead>
             <tr>
                 <th>name</th>
-                <th>actions</th>
             </tr>
         </thead>
         <tbody>
