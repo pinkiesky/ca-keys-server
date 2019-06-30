@@ -5,6 +5,7 @@ import { getReq } from '../utils/xhr';
 import Layout from '../components/Layout';
 import FilterableKeysTable from '../components/keysTable/FilterableKeysTable';
 import Button from '../components/Button';
+import Surface from '../components/Surface';
 
 
 export default function IndexPage({ serve, keys }) {
@@ -16,10 +17,10 @@ export default function IndexPage({ serve, keys }) {
 
   return (
     <Layout>
-      <div>
+      <Surface>
         <span>Serve now: </span>
         {serveState}
-      </div>
+      </Surface>
       <FilterableKeysTable
         keys={keys}
         actions={key => (
